@@ -39,13 +39,13 @@ public class Update extends HttpServlet {
 					"jdbc:mysql://localhost:3306/exam", "root", "");
 
 			PreparedStatement state = con
-					.prepareStatement("update student set Department=? where Roll="+roll);
+					.prepareStatement("update registration set Department=? where Roll="+roll);
 
 			
 			state.setString(1, dept);
 			int r = state.executeUpdate();
 			
-				ResultSet rr = state.executeQuery("select *from student where Roll="+roll);
+				ResultSet rr = state.executeQuery("select *from registration where Roll="+roll);
 
 				out.print("<html>");
 				while (rr.next()) {

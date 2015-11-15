@@ -42,7 +42,7 @@ public class Insert extends HttpServlet {
 					"jdbc:mysql://localhost:3306/exam", "root", "");
 
 			PreparedStatement state = con
-					.prepareStatement("insert into student values(?,?,?,?,?)");
+					.prepareStatement("insert into registration values(?,?,?,?,?)");
 
 			state.setString(1, fisrtname);
 			state.setString(2, lastname);
@@ -52,7 +52,7 @@ public class Insert extends HttpServlet {
 
 			int r = state.executeUpdate();
 			if (r > 0) {
-				ResultSet rr = state.executeQuery("select *from student");
+				ResultSet rr = state.executeQuery("select *from registration");
 
 				out.print("<html>");
 				while (rr.next()) {

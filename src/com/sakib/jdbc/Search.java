@@ -36,7 +36,7 @@ public class Search extends HttpServlet {
 
 			Statement state = con.createStatement();
 			
-				ResultSet rr = state.executeQuery("select *from student where Roll="+roll);
+				ResultSet rr = state.executeQuery("select *from registration where Roll="+roll);
 
 				out.print("<html>");
 				while (rr.next()) {

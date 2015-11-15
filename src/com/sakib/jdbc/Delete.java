@@ -34,7 +34,7 @@ public class Delete extends HttpServlet {
 			Connection con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/exam", "root", "");
 
-			PreparedStatement state=con.prepareStatement("delete from student where Roll=?");
+			PreparedStatement state=con.prepareStatement("delete from registration where Roll=?");
 			state.setString(1, roll);
 			
 			state.executeUpdate();			
